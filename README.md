@@ -1,7 +1,7 @@
-[![Build
-Status](https://travis-ci.org/wtanaka/docker-alpine-uid-hugo.svg?branch=master)](https://travis-ci.org/wtanaka/docker-alpine-uid-hugo)
-
 # This is NOT affiliated with or in any way associated with Docker
+
+Description
+-----------
 
 The `Dockerfile` in this repository builds an `alpine:3.7` container
 which lets you run commands inside the container using a UID and GID
