@@ -15,4 +15,8 @@ To download: [`docker pull wtanaka/alpine-uid-hugo`](https://hub.docker.com/r/wt
 Examples
 --------
 
-To run npm in the current directory, use the included script `hugo`
+To run `hugo` in the current directory, use the included script `hugo`
+
+To run `hugo server`:
+
+./hugo --bind 0.0.0.0
