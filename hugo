@@ -1,6 +1,7 @@
 #!/bin/sh
 # Copyright (C) 2019 Wesley Tanaka
-docker run --rm \
+docker run -i -t --rm \
+  -p 1313:1313 \
   -e "HOSTUID=`id -u`" \
   -e "HOSTGID=`id -g`" \
   -v "`pwd`:/work" \
