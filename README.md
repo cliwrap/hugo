@@ -3,20 +3,22 @@
 Description
 -----------
 
-The `Dockerfile` in this repository builds an `alpine:3.7` container
-which lets you run commands inside the container using a UID and GID
-which are passed in environment variables from outside the container,
-so that any files created in a volume mount can be created as the user
-and group who initiated `docker run`.  It also has the `hugo` static
-website builder installed.
+This `Dockerfile` builds a docker image that lets you run the `hugo`
+static website generator inside docker, but with your non-root user
+and in your current working directory.
 
-To download: [`docker pull wtanaka/alpine-uid-hugo`](https://hub.docker.com/r/wtanaka/alpine-uid-hugo/)
+To do this, you pass a UID and GID as environment variables from
+outside the container and mount the current directory inside the
+container.
+
+To download: [`docker pull
+wtanaka/alpine-uid-hugo`](https://hub.docker.com/r/wtanaka/alpine-uid-hugo/)
 
 Examples
 --------
 
-To run `hugo` in the current directory, use the included script `hugo`
+* To run `hugo` in the current directory, use the included shell script
+  [`hugo`](/hugo)
 
-To run `hugo server`:
-
-./hugo --bind 0.0.0.0
+* To run `hugo server`:
+  `./hugo server --bind 0.0.0.0`
