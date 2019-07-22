@@ -1,0 +1,9 @@
+#!/bin/sh
+# Copyright (C) 2019 Wesley Tanaka
+docker run -i --rm \
+  -p 1313:1313 \
+  -e "HOSTUID=`id -u`" \
+  -e "HOSTGID=`id -g`" \
+  -v "`pwd`:/work" \
+  wtanaka/alpine-uid-hugo \
+  /usr/local/hugo/hugo "$@"
