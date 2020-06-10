@@ -1,5 +1,3 @@
-# This is NOT affiliated with or in any way associated with Docker
-
 Description
 -----------
 
@@ -12,7 +10,7 @@ outside the container and mount the current directory inside the
 container.
 
 To download: [`docker pull
-wtanaka/alpine-uid-hugo`](https://hub.docker.com/r/wtanaka/alpine-uid-hugo/)
+cliwrap/hugo`](https://hub.docker.com/r/cliwrap/hugo/)
 
 Examples
 --------
