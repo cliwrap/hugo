@@ -1,4 +1,4 @@
-FROM wtanaka/alpine-37-uid
+FROM cliwrap/alpine-37
 MAINTAINER http://wtanaka.com/dockerfiles
 EXPOSE 1313
 ENV HUGO_VERSION 0.53
