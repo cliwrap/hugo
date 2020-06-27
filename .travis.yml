@@ -1,0 +1,11 @@
+services:
+- docker
+script:
+- docker build -t cliwrap/hugo .
+- docker run --rm cliwrap/hugo hugo version 2>&1 | grep 'Hugo Static Site Generator v0.63.2-934EE21F/extended'
+after_success:
+- 'curl -H "Content-Type: application/json" --data ''{"source_type": "Branch", "source_name": "master"}'' -X POST https://hub.docker.com/api/build/v1/source/e2a46964-1dc4-4ed6-9e26-912ca8d09224/trigger/86b36206-f847-4aa4-af31-63068c416036/call/'
+notifications:
+  email:
+    recipients:
+      secure: PHGOp/E3LMWXcrb+5XqWS+KOdaQc4qJIrDJn+QFN5x7ZxDhq+3gc7D3T456fgJP9JGoNkDygL6t4ML72dWBuhizUYjnyFzYejZ8K+Eta+TPg3hN61UZZ3WnXnB4aBZ8pfmwBw9dMe1KRD+eDxjZGxXY31WXJ++LY6FvvUZpDfuxH1ILpokOY6Jy1dX7cIuofsWuP0idbbt9CJr2cVSgZKKSOyqbBcIxttkJ3kcOy/FRhVuy46VF+bEIZFHhxRrhlo37H4dbNvxUv3BvD9M1GpZHuCFfFHWagjFHHxmAK+V8kpj5vcnkGvgVQqVpqPPe8XCLfIKLVVDjweqYlEGXtH/W5+vYN1ebzDBHN8oykBobrGZOzZJUVV3GfAD9WyhI5JBviZ2zuQKhWk5+Mc7jblXRQYNwWu6k13viSckcQvCMtQMc18hhQ8v/UWl5Y1hMM4Cgn9/+WGrjjewFZjqrWprZpRh0/2ma7nbufbuHhrv2xu6xTuv3sP3F4FWmVoT1ivrfpAwA8KkWsUTqKRg9hvOV/SyCAcwjz8ZCQpFTRwbRLTvIKdjP/uTgoKs4k84UpAnef2XeBQTOL6vCa1qu94u9c/18xzmHnFwvkf8Acqnqkkf7nfP00vPdSayDPvb5pu7up3uxzu5jnCUJRdNl9vzJIzZDYrgLXAo+SRVCocy0=
