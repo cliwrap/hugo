@@ -1,3 +1,6 @@
+[![Build
+Status](https://travis-ci.com/cliwrap/hugo.svg?branch=master)](https://travis-ci.com/cliwrap/hugo)
+
 Description
 -----------
 
