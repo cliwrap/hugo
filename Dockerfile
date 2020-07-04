@@ -6,7 +6,9 @@ ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_linux-64bit
 ENV HUGO_DONWLOAD_LOCATION /usr/local/hugo/hugo-bin.tar.gz
 
 # Download and Install hugo
+# git is to support https://gohugo.io/variables/git/
 RUN apk add --no-cache \
+    git \
     libc6-compat \
     libstdc++
 RUN mkdir /usr/local/hugo
